@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "id": "goku-mui",
+  "name": "Goku MUI",
+  "author": "sonytaka32-beep",
+  "license": "CC-BY-NC-SA-4.0",
+  "source": "Fan art - Goku Mastered Ultra Instinct © Akira Toriyama/Shueisha",
+  "pixelArt": true,
+  "scale": 1,
+  "canvas": {"w": 300, "h": 300},
+  "anchor": {"x": 150, "baseline": 272},
+  "contentBox": {"x": 20, "y": 20, "w": 260, "h": 260},
+  "hitBoxes": {
+    "default": {"x": 20, "y": 20, "w": 260, "h": 260},
+    "wide": {"x": 10, "y": 10, "w": 280, "h": 280},
+    "sleeping": {"x": 30, "y": 50, "w": 240, "h": 220}
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle.png",
+      "frameW": 300,
+      "frameH": 300,
+      "cols": 6,
+      "box": {"x": 0, "y": 0, "w": 300, "h": 300},
+      "loop": true,
+      "frames": [
+        {"i": 0, "ms": 250}, {"i": 1, "ms": 220}, {"i": 2, "ms": 250},
+        {"i": 3, "ms": 220}, {"i": 4, "ms": 250}, {"i": 5, "ms": 280}
+      ]
+    },
+    "working": {
+      "sheet": "working.png",
+      "frameW": 300,
+      "frameH": 300,
+      "cols": 8,
+      "box": {"x": 0, "y": 0, "w": 300, "h": 300},
+      "loop": true,
+      "frames": [
+        {"i": 0, "ms": 100}, {"i": 1, "ms": 90}, {"i": 2, "ms": 95},
+        {"i": 3, "ms": 100}, {"i": 4, "ms": 95}, {"i": 5, "ms": 100},
+        {"i": 6, "ms": 95}, {"i": 7, "ms": 110}
+      ]
+    },
+    "thinking": {
+      "sheet": "thinking.png",
+      "frameW": 300,
+      "frameH": 300,
+      "cols": 6,
+      "box": {"x": 0, "y": 0, "w": 300, "h": 300},
+      "loop": true,
+      "frames": [
+        {"i": 0, "ms": 280}, {"i": 1, "ms": 260}, {"i": 2, "ms": 250},
+        {"i": 3, "ms": 270}, {"i": 4, "ms": 250}, {"i": 5, "ms": 260}
+      ]
+    },
+    "error": {
+      "sheet": "error.png",
+      "frameW": 300,
+      "frameH": 300,
+      "cols": 5,
+      "box": {"x": 0, "y": 0, "w": 300, "h": 300},
+      "loop": false,
+      "frames": [
+        {"i": 0, "ms": 150}, {"i": 1, "ms": 140}, {"i": 2, "ms": 150},
+        {"i": 3, "ms": 140}, {"i": 4, "ms": 180}
+      ]
+    },
+    "success": {
+      "sheet": "success.png",
+      "frameW": 300,
+      "frameH": 300,
+      "cols": 10,
+      "box": {"x": 0, "y": 0, "w": 300, "h": 300},
+      "loop": false,
+      "frames": [
+        {"i": 0, "ms": 120}, {"i": 1, "ms": 120}, {"i": 2, "ms": 120},
+        {"i": 3, "ms": 120}, {"i": 4, "ms": 120}, {"i": 5, "ms": 120},
+        {"i": 6, "ms": 120}, {"i": 7, "ms": 120}, {"i": 8, "ms": 120},
+        {"i": 9, "ms": 250}
+      ]
+    },
+    "sleep": {
+      "sheet": "sleep.png",
+      "frameW": 300,
+      "frameH": 300,
+      "cols": 6,
+      "box": {"x": 0, "y": 0, "w": 300, "h": 300},
+      "loop": true,
+      "frames": [
+        {"i": 0, "ms": 260}, {"i": 1, "ms": 260}, {"i": 2, "ms": 260},
+        {"i": 3, "ms": 260}, {"i": 4, "ms": 260}, {"i": 5, "ms": 280}
+      ]
+    }
+  },
+  "states": {
+    "idle": ["idle"],
+    "thinking": ["thinking"],
+    "working": ["working"],
+    "juggling": ["working"],
+    "error": ["error"],
+    "attention": ["success"],
+    "notification": ["thinking"],
+    "sweeping": ["working"],
+    "carrying": ["working"],
+    "sleeping": ["sleep"],
+    "waking": ["sleep"],
+    "roam": ["working"]
+  },
+  "reactions": {
+    "tapLeft": "idle",
+    "tapRight": "idle",
+    "tickle": "sleep",
+    "drag": "working"
+  },
+  "roam": {"anim": "working", "faces": "right"},
+  "timings": {
+    "minDisplay": {
+      "working": 800, "thinking": 800, "attention": 1500, "error": 1500
+    },
+    "autoReturn": {
+      "attention": 2000, "error": 2500
+    },
+    "wakeMs": 800
+  },
+  "sleep": {"afterMs": 60000}
+}
